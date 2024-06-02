@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: My Faq Block 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/my-faq-block\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-05-29T15:06:25+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: \n"
+"X-Generator: WP-CLI 2.9.0\n"
+"X-Domain: my-faq-block\n"
+
+#. Plugin Name of the plugin
+#: my-faq-block.php:28
+msgid "My Faq Block"
+msgstr "בלוק שאלות תשובות"
+
+#. Description of the plugin
+#: my-faq-block.php:29
+msgid "Example block scaffolded with Create Block tool."
+msgstr "בלוק דוגמה הנבנה עם כלי Create Block."
+
+#. Author of the plugin
+msgid "The WordPress Contributors"
+msgstr ""
+
+#: build/block.json
+#: src/block.json
+msgctxt "block title"
+msgid "My Faq Block"
+msgstr "בלוק שאלות תשובות"
+
+#: build/block.json
+#: src/block.json
+msgctxt "block description"
+msgid "Example block scaffolded with Create Block tool."
+msgstr ""
