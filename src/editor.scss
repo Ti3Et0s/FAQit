@@ -4,9 +4,42 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-my-faq-block {
-	border: 1px dotted #f00;
+ .clickable-faq {
+	box-shadow: 0px 1px 2px 0px;
+	position: relative;
 }
+
+.wp-block-create-block-my-faq-block {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px;
+	position: relative;
+}
+.faq-block-tools {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+
+.clickable-faq:hover .faq-block-tools {
+	display: flex;
+}
+
 .clickable-faq{
-	border: 1px dotted #f00;
+	dd.description {
+		margin-left: 0;
+		border: none;
+		max-height: none;
+		overflow: visible;
+		transition: max-height 0.3s ease;
+		margin: 0;
+		p {
+			margin: 0;
+			font-weight: 400;
+			font-size: 15px;
+			color: #777E85;
+		}
+	}
 }

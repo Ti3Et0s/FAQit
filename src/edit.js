@@ -111,9 +111,11 @@ const Edit = ({ attributes, setAttributes }) => {
 					</div>
 				</div>
 			))}
-			<Button isPrimary onClick={addQA}>
-				{__('Add FAQ', 'faq-block')}
-			</Button>
+			<div class="editor-add-new-faq-faqit">
+				<Button isPrimary onClick={addQA}>
+					{__('Add FAQ', 'faq-block')}
+				</Button>
+			</div>
 		</div>
 	);
 };
