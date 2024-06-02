@@ -17,7 +17,7 @@ const Save = (props) => {
 						</dt>
 						<dd className="description">
 							<div>
-								<RichText.Content tagName="p" value={item.question} />
+								<RichText.Content tagName="p" value={item.answer} />
 							</div>
 						</dd>
 					</div>
