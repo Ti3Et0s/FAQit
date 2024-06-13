@@ -9,21 +9,16 @@
 	position: relative;
 }
 
-.wp-block-create-block-my-faq-block {
+.wp-block-create-block-faqit {
 	display: flex;
 	flex-direction: column;
 	row-gap: 10px;
 	position: relative;
 }
-.faq-block-tools {
-	display: none;
-	position: absolute;
-	left: 0;
-	top: 0;
-}
 
 
-.clickable-faq:hover .faq-block-tools {
+
+.clickable-faq:hover .faqit-tools {
 	display: flex;
 }
 
@@ -42,4 +37,20 @@
 			color: #777E85;
 		}
 	}
+}
+
+body .clickable-faq .faqit-tools {
+	display: none;
+	position: absolute;
+	top: 0;
+}
+
+body.rtl .clickable-faq .faqit-tools {
+	left: auto;
+	right: 0;
+}
+
+body .clickable-faq .faqit-tools {
+	left: auto;
+	right: 0;
 }

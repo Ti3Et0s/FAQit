@@ -1,13 +1,14 @@
-export function Arrow() {
+export function Arrow({ color = '#000000' }) {
 	return (
-		<span class="expand-collapse">
+		<span className="expand-collapse">
 			<svg width="24px" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="">
-				<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+				<path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" fill={color}></path>
 			</svg>
 		</span>
-
-	)
+	);
 }
+
+
 export function MoveDownIcon() {
 	return (
 		<span class="expand-collapse">

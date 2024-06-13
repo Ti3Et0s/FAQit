@@ -1,9 +1,10 @@
 import { __ } from '@wordpress/i18n';
-import { Button, Dashicon, Tooltip } from '@wordpress/components';
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { Button, Dashicon, Tooltip, PanelBody, ColorPicker } from '@wordpress/components';
+import { useBlockProps, InspectorControls, RichText } from '@wordpress/block-editor';
+import { createElement } from '@wordpress/element';
 
 const Edit = ({ attributes, setAttributes }) => {
-	const { faqs = [] } = attributes;
+	const { faqs = [], arrowColor } = attributes;
 
 	const addQA = () => {
 		const newQuestions = [...faqs, { question: '', answer: '' }];
@@ -54,7 +55,16 @@ const Edit = ({ attributes, setAttributes }) => {
 	};
 
 	return (
-		<div className='myfaq-block-editor' {...useBlockProps()}>
+		<div className='faqit-block-editor' {...useBlockProps()}>
+			<InspectorControls>
+				<PanelBody title={__('Arrow Color', 'faqit')}>
+					<ColorPicker
+						color={arrowColor}
+						onChangeComplete={(value) => setAttributes({ arrowColor: value.hex })}
+						disableAlpha
+					/>
+				</PanelBody>
+			</InspectorControls>
 			{faqs.map((item, index) => (
 				<div key={index} className='clickable-faq'>
 					<dt className='description-title'>
@@ -62,7 +72,7 @@ const Edit = ({ attributes, setAttributes }) => {
 							tagName="p"
 							value={item.question}
 							onChange={(value) => updateQuestion(value, index)}
-							placeholder={__('Question...', 'faq-block')}
+							placeholder={__('Question...', 'faqit')}
 						/>
 					</dt>
 					<dd className="description">
@@ -70,11 +80,11 @@ const Edit = ({ attributes, setAttributes }) => {
 							tagName="p"
 							value={item.answer}
 							onChange={(value) => updateAnswer(value, index)}
-							placeholder={__('Answer...', 'faq-block')}
+							placeholder={__('Answer...', 'faqit')}
 						/>
 					</dd>
-					<div className='faq-block-tools'>
-						<Tooltip text={__('Remove FAQ', 'faq-block')}>
+					<div className='faqit-tools'>
+						<Tooltip text={__('Remove FAQ', 'faqit')}>
 							<Button
 								isDestructive
 								onClick={() => removeQA(index)}
@@ -82,7 +92,7 @@ const Edit = ({ attributes, setAttributes }) => {
 								<Dashicon icon="trash" />
 							</Button>
 						</Tooltip>
-						<Tooltip text={__('Duplicate FAQ', 'faq-block')}>
+						<Tooltip text={__('Duplicate FAQ', 'faqit')}>
 							<Button
 								isSecondary
 								onClick={() => duplicateQA(index)}
@@ -90,7 +100,7 @@ const Edit = ({ attributes, setAttributes }) => {
 								<Dashicon icon="admin-page" />
 							</Button>
 						</Tooltip>
-						<Tooltip text={__('Move FAQ Up', 'faq-block')}>
+						<Tooltip text={__('Move FAQ Up', 'faqit')}>
 							<Button
 								isSecondary
 								onClick={() => moveFAQUp(index)}
@@ -99,7 +109,7 @@ const Edit = ({ attributes, setAttributes }) => {
 								<Dashicon icon="arrow-up-alt2" />
 							</Button>
 						</Tooltip>
-						<Tooltip text={__('Move FAQ Down', 'faq-block')}>
+						<Tooltip text={__('Move FAQ Down', 'faqit')}>
 							<Button
 								isSecondary
 								onClick={() => moveFAQDown(index)}
@@ -111,9 +121,9 @@ const Edit = ({ attributes, setAttributes }) => {
 					</div>
 				</div>
 			))}
-			<div class="editor-add-new-faq-faqit">
+			<div className="editor-add-new-faq-faqit">
 				<Button isPrimary onClick={addQA}>
-					{__('Add FAQ', 'faq-block')}
+					{__('Add FAQ', 'faqit')}
 				</Button>
 			</div>
 		</div>
