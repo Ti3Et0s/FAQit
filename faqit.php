@@ -37,15 +37,6 @@ function init_faq_it_block()
 		true
 	);
 
-	// Register block frontend script.
-	wp_register_script(
-		'faqit-block-frontend-script',
-		plugins_url('src/js/script.js', __FILE__),
-		array('wp-element'),
-		filemtime(plugin_dir_path(__FILE__) . 'src/js/script.js'),
-		true
-	);
-
 	// Register block frontend styles.
 	wp_register_style(
 		'faqit-block-style',
